@@ -1,4 +1,4 @@
-package com.grafexmedia.learnandroid;
+package com.grafexmedia.learnandroid.intent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,25 +8,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.grafexmedia.learnandroid.intent.FirstActivity;
+import com.grafexmedia.learnandroid.MainActivity;
+import com.grafexmedia.learnandroid.R;
 
-public class MainActivity extends AppCompatActivity {
+public class SecondActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_second);
 
         TextView textView = findViewById(R.id.textView);
-        Button button = findViewById(R.id.firstActivity);
+        Button button = findViewById(R.id.thirdActivity);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, FirstActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(SecondActivity.this, MainActivity.class));
             }
         });
-
     }
 }
